@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', {
     phrase: "taco Cat"
   });
@@ -29,8 +29,8 @@ function checkPalindrome(phrase){
 
 function getResultDescription (phrase){
   if (checkPalindrome(phrase)) {
-    return `${phrase} is a palindrome, ${temp}`
+    return `"${phrase}" is a palindrome`
   }
-  return `${phrase} is not a palindrome, ${temp}`
+  return `"${phrase}" is not a palindrome`
 }
 module.exports = router;
